@@ -1,0 +1,35 @@
+Fuzzer - Udacity's CS258 - Software Testing - Problem Set 4
+
+Copyright (C) 2012 Danilo de Jesus da Silva Bellini
+                   danilo [dot] bellini [at] gmail [dot] com
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License version 3 as
+published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Created on 2012-08-05
+
+This fuzzer tests if the application crashes when given such invalid
+data. There are the following types of randomized tests:
+
+- Changing bytes from a valid input
+- Inserting bytes to or removing bytes from a valid input
+- Changing the file extension
+
+The 3 kind of changes might happens simultaneously. All valid inputs
+should be inside the "inputs" directory (or any subdirectory that
+branches from it). Logging happens into a file named "general.log", and
+all failed tests are put inside the "crashed" directory, in a
+subdirectory with a given timestamp. All passing tests are stored too,
+but as a BSDIFF4-format patch inside the "log" directory.
+
+For now, the configuration is hard-coded to give the random file inputs
+to gwenview.
